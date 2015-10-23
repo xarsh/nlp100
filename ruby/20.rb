@@ -1,8 +1,10 @@
 require 'json'
 require 'zlib'
 
-infile = open('./data/jawiki-country.json.gz')
-gz = Zlib::GzipReader.new(infile)
-article =  gz.find{|article| JSON.parse(article)['title'] == 'イギリス'}
+def eng
+  infile = open('./data/jawiki-country.json.gz')
+  gz = Zlib::GzipReader.new(infile).map(&JSON.method(:parse))
+  gz.find{|item| item['title'] == 'イギリス'}['text']
+end
 
-puts JSON.parse(article)['text']
+puts eng if $0 == __FILE__
