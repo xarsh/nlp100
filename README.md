@@ -1,7 +1,7 @@
 言語処理100本ノック 2015
 ===
 
-問題集をやってみた。
+言語処理に詳しくないので有名な問題集をやってみた。
 http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
 
@@ -10,13 +10,12 @@ http://www.cl.ecei.tohoku.ac.jp/nlp100/
 
 
 ### データ・コーパス
+必要なデータは下記リンクからダウンロードし、`data`フォルダに置きます。
 http://www.cl.ecei.tohoku.ac.jp/nlp100/data/
 
 
 ### 第4章:形態素解析について
 ```
 $ brew install mecab mecab-ipadic
+$ mecab data/neko.txt > data/neko.txt.mecab
 ```
-
-### 第7章:データベースについて
-問題上ではMongoDBを採用しているが、触ったことのないDBを使いたかったのでDocumentDBを採用する。
